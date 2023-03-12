@@ -1,0 +1,5 @@
+add_subdirectory(ManagerBases)
+add_subdirectory(GameObjects)
+add_subdirectory(Gui)
+add_subdirectory(Resources)
+add_subdirectory(GameStates)

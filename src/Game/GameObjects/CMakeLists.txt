@@ -1,0 +1,3 @@
+add_subdirectory(GameObjects)
+add_subdirectory(GameObjectsManager)
+add_subdirectory(Interfaces)
