@@ -9,8 +9,10 @@ void managers::GameManager::loop()
 {
     while (m_window.isOpen())
     {
+        m_deltaTimer.startTimer();
         detectWindowClose();
         actionsPerFrame();
+        m_deltaTime = m_deltaTimer.getDelta();
     }
 }
 
@@ -26,6 +28,6 @@ void managers::GameManager::detectWindowClose()
 void managers::GameManager::actionsPerFrame()
 {
     m_window.clear();
-    m_statesManager.processTopState(2222, m_window);
+    m_statesManager.processTopState(m_deltaTime, m_window);
     m_window.display();
 }

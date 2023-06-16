@@ -1,5 +1,6 @@
 #pragma once
 
+#include "DeltaTimer.hpp"
 #include "StatesManager.hpp"
 #include <SFML/Graphics.hpp>
 
@@ -14,6 +15,12 @@ class GameManager
 
     /// @brief StatesManager reference.
     managers::StatesManager &m_statesManager;
+
+    /// @brief Delta timer.
+    managers::DeltaTimer m_deltaTimer;
+
+    /// @brief Delta time.
+    double m_deltaTime;
 
   public:
     GameManager(sf::RenderWindow &window, managers::StatesManager &statesManager);
