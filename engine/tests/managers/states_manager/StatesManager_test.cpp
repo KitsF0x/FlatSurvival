@@ -57,3 +57,4 @@ TEST(StatesManager_test, Can_process_top_state)
     EXPECT_TRUE(update);
     EXPECT_TRUE(render);
 }
+
