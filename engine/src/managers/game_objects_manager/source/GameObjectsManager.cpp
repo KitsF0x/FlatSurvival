@@ -33,3 +33,8 @@ bool managers::GameObjectsManager::removeGameObject(std::shared_ptr<managers::IG
 
     return false;
 }
+
+std::size_t managers::GameObjectsManager::size()
+{
+    m_gameObjects.size();
+}

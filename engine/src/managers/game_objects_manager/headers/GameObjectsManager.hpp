@@ -30,5 +30,9 @@ class GameObjectsManager
     /// @param gameObject Game object.
     /// @return True if successfully deleted object. False if object is not present in manager.
     bool removeGameObject(std::shared_ptr<managers::IGameObject> gameObject);
+
+    /// @brief Returns number of game objects in the manager.
+    /// @return Number of the game objects in the manager.
+    std::size_t size();
 };
 } // namespace managers
