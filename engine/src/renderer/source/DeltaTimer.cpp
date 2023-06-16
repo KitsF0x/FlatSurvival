@@ -1,11 +1,11 @@
 #include "DeltaTimer.hpp"
 
-void managers::DeltaTimer::startTimer()
+void renderer::DeltaTimer::startTimer()
 {
     m_clock.restart();
 }
 
-double managers::DeltaTimer::getDelta()
+double renderer::DeltaTimer::getDelta()
 {
     return m_clock.getElapsedTime().asSeconds();
 }

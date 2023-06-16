@@ -1,4 +1,4 @@
-#include "GameManager.hpp"
+#include "Renderer.hpp"
 
 #include <iostream>
 
@@ -22,6 +22,6 @@ int main()
     managers::StatesManager sm;
     sm.push(std::make_unique<SimpleState>());
     sf::RenderWindow wnd{sf::VideoMode{800, 600}, "Hello, world!"};
-    managers::GameManager gm{wnd, sm};
+    renderer::Renderer gm{wnd, sm};
     gm.loop();
 }

@@ -2,7 +2,7 @@
 
 #include <SFML/System/Clock.hpp>
 
-namespace managers
+namespace renderer
 {
 class DeltaTimer
 {

@@ -1,11 +1,11 @@
-#include "GameManager.hpp"
+#include "Renderer.hpp"
 
-managers::GameManager::GameManager(sf::RenderWindow &window, managers::StatesManager &statesManager)
+renderer::Renderer::Renderer(sf::RenderWindow &window, managers::StatesManager &statesManager)
     : m_window(window), m_statesManager(statesManager)
 {
 }
 
-void managers::GameManager::loop()
+void renderer::Renderer::loop()
 {
     while (m_window.isOpen())
     {
@@ -16,7 +16,7 @@ void managers::GameManager::loop()
     }
 }
 
-void managers::GameManager::detectWindowClose()
+void renderer::Renderer::detectWindowClose()
 {
     sf::Event evn;
     if (m_window.pollEvent(evn) && evn.type == sf::Event::Closed)
@@ -25,7 +25,7 @@ void managers::GameManager::detectWindowClose()
     }
 }
 
-void managers::GameManager::actionsPerFrame()
+void renderer::Renderer::actionsPerFrame()
 {
     m_window.clear();
     m_statesManager.processTopState(m_deltaTime, m_window);

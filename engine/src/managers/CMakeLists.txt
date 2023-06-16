@@ -1,2 +1,1 @@
 add_subdirectory(states_manager)
-add_subdirectory(game_manager)

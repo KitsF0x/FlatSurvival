@@ -4,10 +4,10 @@
 #include "StatesManager.hpp"
 #include <SFML/Graphics.hpp>
 
-namespace managers
+namespace renderer
 {
 /// @brief Main game loop class.
-class GameManager
+class Renderer
 {
   private:
     /// @brief RenderWindow reference.
@@ -17,13 +17,13 @@ class GameManager
     managers::StatesManager &m_statesManager;
 
     /// @brief Delta timer.
-    managers::DeltaTimer m_deltaTimer;
+    renderer::DeltaTimer m_deltaTimer;
 
     /// @brief Delta time.
     double m_deltaTime;
 
   public:
-    GameManager(sf::RenderWindow &window, managers::StatesManager &statesManager);
+    Renderer(sf::RenderWindow &window, managers::StatesManager &statesManager);
     /// @brief Main loop method. When called game starts.
     void loop();
 
@@ -33,4 +33,4 @@ class GameManager
     /// @brief Executes a list of actions performed each frame.
     void actionsPerFrame();
 };
-} // namespace managers
+} // namespace renderer
