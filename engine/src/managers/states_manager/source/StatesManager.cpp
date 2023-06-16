@@ -23,6 +23,9 @@ std::size_t managers::StatesManager::size()
 
 void managers::StatesManager::processTopState(double delta, sf::RenderWindow &window)
 {
-    m_states.top()->update(delta);
-    m_states.top()->render(window);
+    if (!m_states.empty())
+    {
+        m_states.top()->update(delta);
+        m_states.top()->render(window);
+    }
 }
