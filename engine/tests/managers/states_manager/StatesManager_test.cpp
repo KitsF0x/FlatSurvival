@@ -17,7 +17,7 @@ class SimpleState : public states::IState
     {
         init_set = true;
     }
-    virtual void update(double deltaTime) override
+    virtual void update(double deltaTime, sf::RenderWindow &window) override
     {
         update_set = true;
     }

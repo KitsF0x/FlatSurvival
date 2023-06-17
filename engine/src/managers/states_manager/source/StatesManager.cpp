@@ -25,7 +25,7 @@ void states::StatesManager::processTopState(double delta, sf::RenderWindow &wind
 {
     if (!m_states.empty())
     {
-        m_states.top()->update(delta);
+        m_states.top()->update(delta, window);
         m_states.top()->render(window);
     }
 }

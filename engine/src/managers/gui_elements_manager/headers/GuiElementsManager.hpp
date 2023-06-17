@@ -24,7 +24,11 @@ class GuiElementsManager
     bool remove(std::shared_ptr<gui::IGuiElement> element);
 
     /// @brief Processes gui elements from the manager.
-    void process(sf::RenderWindow &window);
+    void process(sf::Vector2f mousePos);
+
+    /// @brief Renders gui elements on window.
+    /// @param window RenderWindow.
+    void render(sf::RenderWindow &window);
 
     /// @brief Returns number of gui elements in the manager.
     /// @return Number of the gui elements.

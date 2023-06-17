@@ -17,12 +17,11 @@ bool gui::GuiElementsManager::remove(std::shared_ptr<gui::IGuiElement> element)
     return false;
 }
 
-void gui::GuiElementsManager::process(sf::RenderWindow &window)
+void gui::GuiElementsManager::process(sf::Vector2f mousePos)
 {
 
     sf::RectangleShape cur{sf::Vector2f{1.0f, 1.0f}};
-    cur.setPosition(sf::Vector2f{static_cast<float>(sf::Mouse::getPosition(window).x),
-                                 static_cast<float>(sf::Mouse::getPosition(window).y)});
+    cur.setPosition(mousePos);
     for (auto &el : m_guiElements)
     {
         if (cur.getGlobalBounds().intersects(el->getFloatRect()))
@@ -40,6 +39,13 @@ void gui::GuiElementsManager::process(sf::RenderWindow &window)
         {
             el->onIdle();
         }
+    }
+}
+
+void gui::GuiElementsManager::render(sf::RenderWindow &window)
+{
+    for (auto &el : m_guiElements)
+    {
         el->render(window);
     }
 }
