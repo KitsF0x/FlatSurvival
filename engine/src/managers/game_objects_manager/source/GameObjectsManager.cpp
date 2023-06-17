@@ -36,5 +36,5 @@ bool gameobjects::GameObjectsManager::removeGameObject(std::shared_ptr<gameobjec
 
 std::size_t gameobjects::GameObjectsManager::size()
 {
-    m_gameObjects.size();
+    return m_gameObjects.size();
 }
