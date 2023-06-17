@@ -1,12 +1,17 @@
+#include "GuiElementsManager.hpp"
 #include "Renderer.hpp"
-
+#include "SimpleGuiElement.hpp"
 #include <iostream>
 
 class SimpleState : public managers::IState
 {
+  private:
+    managers::GuiElementsManager m_manager;
+
   public:
     virtual void init() override
     {
+        m_manager.add(std::make_shared<managers::SimpleGuiElement>());
     }
     virtual void update(double deltaTime) override
     {
@@ -14,6 +19,7 @@ class SimpleState : public managers::IState
     }
     virtual void render(sf::RenderWindow &window) override
     {
+        m_manager.process(window);
     }
 };
 

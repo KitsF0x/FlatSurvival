@@ -1,2 +1,3 @@
 add_subdirectory(states_manager)
 add_subdirectory(game_objects_manager)
+add_subdirectory(gui_elements_manager)
