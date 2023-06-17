@@ -2,7 +2,7 @@
 
 #include "StatesManager.hpp"
 
-class SimpleState : public managers::IState
+class SimpleState : public states::IState
 {
   public:
     SimpleState(bool &init_set, bool &update_set, bool &render_set)
@@ -29,7 +29,7 @@ class SimpleState : public managers::IState
 
 TEST(StatesManager_test, Can_push_and_pop_state)
 {
-    managers::StatesManager sm;
+    states::StatesManager sm;
     bool a, b, c;
     sm.push(std::make_unique<SimpleState>(a, b, c));
     EXPECT_EQ(sm.size(), 1);
@@ -38,7 +38,7 @@ TEST(StatesManager_test, Can_push_and_pop_state)
 
 TEST(StatesManager_test, Cannot_pop_when_size_is_zero)
 {
-    managers::StatesManager sm;
+    states::StatesManager sm;
     bool a, b, c;
     sm.push(std::make_unique<SimpleState>(a, b, c));
     EXPECT_EQ(sm.size(), 1);
@@ -48,7 +48,7 @@ TEST(StatesManager_test, Cannot_pop_when_size_is_zero)
 
 TEST(StatesManager_test, Can_process_top_state)
 {
-    managers::StatesManager sm;
+    states::StatesManager sm;
     bool init = false, update = false, render = false;
     sf::RenderWindow wnd;
     sm.push(std::make_unique<SimpleState>(init, update, render));
@@ -57,4 +57,3 @@ TEST(StatesManager_test, Can_process_top_state)
     EXPECT_TRUE(update);
     EXPECT_TRUE(render);
 }
-

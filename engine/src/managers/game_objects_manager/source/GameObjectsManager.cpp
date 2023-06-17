@@ -1,12 +1,12 @@
 #include "GameObjectsManager.hpp"
 
-void managers::GameObjectsManager::add(std::shared_ptr<managers::IGameObject> gameObject)
+void gameobjects::GameObjectsManager::add(std::shared_ptr<gameobjects::IGameObject> gameObject)
 {
     m_gameObjects.push_back(gameObject);
     gameObject->init();
 }
 
-void managers::GameObjectsManager::updateGameObjects(double deltaTime)
+void gameobjects::GameObjectsManager::updateGameObjects(double deltaTime)
 {
     for (auto &el : m_gameObjects)
     {
@@ -14,7 +14,7 @@ void managers::GameObjectsManager::updateGameObjects(double deltaTime)
     }
 }
 
-void managers::GameObjectsManager::renderGameObjects(sf::RenderWindow &window)
+void gameobjects::GameObjectsManager::renderGameObjects(sf::RenderWindow &window)
 {
     for (auto &el : m_gameObjects)
     {
@@ -22,7 +22,7 @@ void managers::GameObjectsManager::renderGameObjects(sf::RenderWindow &window)
     }
 }
 
-bool managers::GameObjectsManager::removeGameObject(std::shared_ptr<managers::IGameObject> gameObject)
+bool gameobjects::GameObjectsManager::removeGameObject(std::shared_ptr<gameobjects::IGameObject> gameObject)
 {
     auto it = std::find(m_gameObjects.begin(), m_gameObjects.end(), gameObject);
     if (it != m_gameObjects.end())
@@ -34,7 +34,7 @@ bool managers::GameObjectsManager::removeGameObject(std::shared_ptr<managers::IG
     return false;
 }
 
-std::size_t managers::GameObjectsManager::size()
+std::size_t gameobjects::GameObjectsManager::size()
 {
     m_gameObjects.size();
 }

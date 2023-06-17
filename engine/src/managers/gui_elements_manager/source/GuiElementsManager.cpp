@@ -1,11 +1,11 @@
 #include "GuiElementsManager.hpp"
 
-void managers::GuiElementsManager::add(std::shared_ptr<IGuiElement> element)
+void gui::GuiElementsManager::add(std::shared_ptr<gui::IGuiElement> element)
 {
     m_guiElements.push_back(element);
 }
 
-bool managers::GuiElementsManager::remove(std::shared_ptr<IGuiElement> element)
+bool gui::GuiElementsManager::remove(std::shared_ptr<gui::IGuiElement> element)
 {
     auto it = std::find(m_guiElements.begin(), m_guiElements.end(), element);
     if (it != m_guiElements.end())
@@ -17,7 +17,7 @@ bool managers::GuiElementsManager::remove(std::shared_ptr<IGuiElement> element)
     return false;
 }
 
-void managers::GuiElementsManager::process(sf::RenderWindow &window)
+void gui::GuiElementsManager::process(sf::RenderWindow &window)
 {
 
     sf::RectangleShape cur{sf::Vector2f{1.0f, 1.0f}};
@@ -44,7 +44,7 @@ void managers::GuiElementsManager::process(sf::RenderWindow &window)
     }
 }
 
-std::size_t managers::GuiElementsManager::size()
+std::size_t gui::GuiElementsManager::size()
 {
     return m_guiElements.size();
 }

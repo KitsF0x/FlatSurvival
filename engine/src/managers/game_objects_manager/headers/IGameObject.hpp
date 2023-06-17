@@ -2,7 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 
-namespace managers
+namespace gameobjects
 {
 /// @brief Interface for game objects.
 class IGameObject
@@ -19,4 +19,4 @@ class IGameObject
     /// @param window RenderWindow reference.
     virtual void render(sf::RenderWindow &window) = 0;
 };
-} // namespace managers
+} // namespace gameobjects

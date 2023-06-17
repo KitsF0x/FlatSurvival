@@ -2,7 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 
-namespace managers
+namespace gui
 {
 /// @brief Gui element interface.
 class IGuiElement

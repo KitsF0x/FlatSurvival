@@ -4,19 +4,19 @@
 #include <memory>
 #include <stack>
 
-namespace managers
+namespace states
 {
 /// @brief Managing states as stack.
 class StatesManager
 {
   private:
     /// @brief Stack of states.
-    std::stack<std::unique_ptr<managers::IState>> m_states;
+    std::stack<std::unique_ptr<states::IState>> m_states;
 
   public:
     /// @brief Pushes new state to the stack.
     /// @param state New state.
-    void push(std::unique_ptr<managers::IState> state);
+    void push(std::unique_ptr<states::IState> state);
 
     /// @brief Pops top state from the stack.
     /// @return True if successfully popped state. False if not(stack size is 0).

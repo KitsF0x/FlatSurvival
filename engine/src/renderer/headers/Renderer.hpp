@@ -14,7 +14,7 @@ class Renderer
     sf::RenderWindow &m_window;
 
     /// @brief StatesManager reference.
-    managers::StatesManager &m_statesManager;
+    states::StatesManager &m_statesManager;
 
     /// @brief Delta timer.
     renderer::DeltaTimer m_deltaTimer;
@@ -23,7 +23,7 @@ class Renderer
     double m_deltaTime;
 
   public:
-    Renderer(sf::RenderWindow &window, managers::StatesManager &statesManager);
+    Renderer(sf::RenderWindow &window, states::StatesManager &statesManager);
     /// @brief Main loop method. When called game starts.
     void loop();
 

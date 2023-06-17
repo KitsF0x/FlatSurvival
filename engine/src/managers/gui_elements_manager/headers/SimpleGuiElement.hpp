@@ -1,8 +1,8 @@
 #include "IGuiElement.hpp"
 
-namespace managers
+namespace gui
 {
-class SimpleGuiElement : public managers::IGuiElement
+class SimpleGuiElement : public gui::IGuiElement
 {
   private:
     sf::RectangleShape m_shape;

@@ -2,7 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 
-namespace managers
+namespace states
 {
 class IState
 {

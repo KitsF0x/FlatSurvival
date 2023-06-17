@@ -6,22 +6,22 @@
 #include <memory>
 #include <vector>
 
-namespace managers
+namespace gui
 {
 class GuiElementsManager
 {
   private:
     /// @brief Vector of gui elements.
-    std::vector<std::shared_ptr<IGuiElement>> m_guiElements;
+    std::vector<std::shared_ptr<gui::IGuiElement>> m_guiElements;
 
   public:
     /// @brief Adds gui element to the manager.
     /// @param element Gui element to add.
-    void add(std::shared_ptr<IGuiElement> element);
+    void add(std::shared_ptr<gui::IGuiElement> element);
 
     /// @brief Removes gui element from the manager.
     /// @param element Gui element to remove.
-    bool remove(std::shared_ptr<IGuiElement> element);
+    bool remove(std::shared_ptr<gui::IGuiElement> element);
 
     /// @brief Processes gui elements from the manager.
     void process(sf::RenderWindow &window);
@@ -30,4 +30,4 @@ class GuiElementsManager
     /// @return Number of the gui elements.
     std::size_t size();
 };
-} // namespace managers
+} // namespace gui

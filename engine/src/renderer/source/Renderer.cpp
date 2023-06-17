@@ -1,6 +1,6 @@
 #include "Renderer.hpp"
 
-renderer::Renderer::Renderer(sf::RenderWindow &window, managers::StatesManager &statesManager)
+renderer::Renderer::Renderer(sf::RenderWindow &window, states::StatesManager &statesManager)
     : m_window(window), m_statesManager(statesManager)
 {
 }

@@ -2,7 +2,7 @@
 
 #include "GameObjectsManager.hpp"
 
-class SimpleGameObject : public managers::IGameObject
+class SimpleGameObject : public gameobjects::IGameObject
 {
   public:
     bool a = false, b = false, c = false;
@@ -29,7 +29,7 @@ class SimpleGameObject2 : public SimpleGameObject
 class GameObjectsManager_test : public ::testing::Test
 {
   public:
-    managers::GameObjectsManager m;
+    gameobjects::GameObjectsManager m;
     sf::RenderWindow wnd;
     std::shared_ptr<SimpleGameObject> go = std::make_shared<SimpleGameObject>();
 };

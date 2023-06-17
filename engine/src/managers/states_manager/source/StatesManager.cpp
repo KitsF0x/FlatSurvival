@@ -1,12 +1,12 @@
 #include "StatesManager.hpp"
 
-void managers::StatesManager::push(std::unique_ptr<managers::IState> state)
+void states::StatesManager::push(std::unique_ptr<states::IState> state)
 {
     m_states.push(std::move(state));
     m_states.top()->init();
 }
 
-bool managers::StatesManager::pop()
+bool states::StatesManager::pop()
 {
     if (this->size() == 0)
     {
@@ -16,12 +16,12 @@ bool managers::StatesManager::pop()
     return true;
 }
 
-std::size_t managers::StatesManager::size()
+std::size_t states::StatesManager::size()
 {
     return m_states.size();
 }
 
-void managers::StatesManager::processTopState(double delta, sf::RenderWindow &window)
+void states::StatesManager::processTopState(double delta, sf::RenderWindow &window)
 {
     if (!m_states.empty())
     {
