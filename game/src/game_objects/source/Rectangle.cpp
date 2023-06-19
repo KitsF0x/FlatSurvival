@@ -2,24 +2,29 @@
 
 void gameobjects::Rectangle::init()
 {
-    m_shape.setSize(sf::Vector2f{64, 64});
+    setSize(sf::Vector2f{64, 64});
 }
 
 void gameobjects::Rectangle::update(double deltaTime)
 {
-    sf::Color rectColor = m_shape.getFillColor();
-    if (rectColor.r < 255)
+    switch (rand() % 5)
     {
-        rectColor.r++;
+    case 0:
+        move(sf::Vector2f{0, -4});
+        break;
+    case 1:
+        move(sf::Vector2f{4, 0});
+        break;
+    case 2:
+        move(sf::Vector2f{0, 4});
+        break;
+    case 3:
+        move(sf::Vector2f{-4, 0});
+        break;
     }
-    else
-    {
-        rectColor.r = 0;
-    }
-    m_shape.setFillColor(rectColor);
 }
 
 void gameobjects::Rectangle::render(sf::RenderWindow &window)
 {
-    window.draw(m_shape);
+    window.draw(*this);
 }

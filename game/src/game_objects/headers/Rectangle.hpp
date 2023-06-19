@@ -4,11 +4,8 @@
 
 namespace gameobjects
 {
-class Rectangle : public gameobjects::IGameObject
+class Rectangle : public gameobjects::IGameObject, public sf::RectangleShape
 {
-  private:
-    sf::RectangleShape m_shape;
-
   public:
     virtual void init() override;
     virtual void update(double deltaTime) override;

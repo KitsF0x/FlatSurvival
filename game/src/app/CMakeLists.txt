@@ -5,4 +5,5 @@ target_link_libraries(${PROJECT_NAME}_game PRIVATE
     game_objects_manager 
     game_game_objects
     renderer
+    gui_elements_manager
 )
