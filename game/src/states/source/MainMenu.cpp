@@ -1,6 +1,6 @@
 #include "MainMenu.hpp"
 
-states::MainMenu::MainMenu(states::StatesManager &statesManager) : m_statesManager(statesManager)
+states::MainMenu::MainMenu(states::StatesManager &statesManager) : BaseState(statesManager)
 {
 }
 

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "BaseState.hpp"
 #include "GameObjectsManager.hpp"
 #include "IState.hpp"
 #include "Rectangle.hpp"
@@ -7,12 +8,8 @@
 
 namespace states
 {
-class MainMenu : public states::IState
+class MainMenu : public states::BaseState
 {
-  private:
-    gameobjects::GameObjectsManager m_gameObjectsManager;
-    states::StatesManager &m_statesManager;
-
   public:
     MainMenu(states::StatesManager &statesManager);
     virtual void init() override;
